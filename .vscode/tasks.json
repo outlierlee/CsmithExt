@@ -1,0 +1,19 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "build_random_program",  // 构建任务的名称
+        "type": "shell",
+        "command": "csmith",  // 生成随机程序
+        "args": [
+          ">", "random1.c"  // 输出重定向
+        ],
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        },
+        "problemMatcher": [],
+        "detail": "Generate random1.c using Csmith"
+      }
+    ]
+  }

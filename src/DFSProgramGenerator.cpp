@@ -80,6 +80,7 @@ DFSProgramGenerator::get_count_prefix(const std::string &name)
 	return ss.str();
 }
 
+
 void
 DFSProgramGenerator::goGenerator()
 {

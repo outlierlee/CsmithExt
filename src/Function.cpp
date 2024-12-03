@@ -473,11 +473,12 @@ Function::make_random(const CGContext& cg_context, const Type* type, const CVQua
 }
 
 /*
- *
+ * 创建种子函数
  */
 Function *
 Function::make_first(void)
 {
+	//
 	const Type *ty = RandomReturnType();
 	ERROR_GUARD(NULL);
 
@@ -485,15 +486,15 @@ Function::make_first(void)
 	// dummy variable representing return variable, we don't care about the type, so use 0
 	string rvname = f->name + "_" + "rv";
 	f->alias_name = f->name + "_alias";
-	CVQualifiers ret_qfer = CVQualifiers::random_qualifiers(ty);
+	CVQualifiers ret_qfer = CVQualifiers::random_qualifiers(ty); //创建修饰符
 	ERROR_GUARD(NULL);
-	f->rv = Variable::CreateVariable(rvname, ty, NULL, &ret_qfer);
+	f->rv = Variable::CreateVariable(rvname, ty, NULL, &ret_qfer); //创建返回变量
 
 	// create a fact manager for this function, with empty global facts
 	FactMgr* fm = new FactMgr(f);
 	FMList.push_back(fm);
 
-	ExtensionMgr::GenerateFirstParameterList(*f);
+	ExtensionMgr::GenerateFirstParameterList(*f);//参数列表
 
 	// No Parameter List
 	f->GenerateBody(CGContext::get_empty_context());
@@ -681,7 +682,7 @@ Function::GenerateBody(const CGContext &prev_context)
 		cerr << "warning: ignoring attempt to regenerate func" << endl;
 		return;
 	}
-
+	// Create a new fact manager for this function.
 	build_state = BUILDING;
 	Effect effect_accum;
 	CGContext cg_context(this, prev_context.get_effect_context(), &effect_accum);
@@ -697,6 +698,8 @@ Function::GenerateBody(const CGContext &prev_context)
 		body = Block::make_dummy_block(cg_context);
 	else
 		body = Block::make_random(cg_context);
+	cerr << "Body generated:" << endl;
+    cerr << body->to_string() << endl;  // assuming Block has to_string()
 	ERROR_RETURN();
 	body->set_depth_protect(true);
 
@@ -845,11 +848,12 @@ Function::compute_summary(void)
 }
 
 /*
- *
+ * 
  */
 void
 GenerateFunctions(void)
 {
+	// -----------------
 	FactMgr::add_interested_facts(CGOptions::interested_facts());
 	if (CGOptions::builtins())
 		Function::initialize_builtin_functions();

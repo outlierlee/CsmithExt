@@ -521,7 +521,11 @@ CGContext::find_variable_scope(const Variable* var) const
 	return INACTIVE;
 }
 
-void CGContext::extend_call_chain(const CGContext& cg_context)
+/*
+todo
+*/
+void 
+CGContext::extend_call_chain(const CGContext& cg_context)
 {
 	call_chain = cg_context.call_chain;
 	const Block* b = cg_context.get_current_block();

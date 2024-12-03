@@ -1,0 +1,45 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"install"
+		],
+		"files" : 
+		[
+			"scripts/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 39,
+				"parent" : 0
+			}
+		]
+	},
+	"installers" : 
+	[
+		{
+			"backtrace" : 1,
+			"component" : "Unspecified",
+			"destination" : "/usr/local/bin",
+			"paths" : 
+			[
+				"scripts/compiler_test.in",
+				"scripts/compiler_test.pl",
+				"scripts/launchn.pl"
+			],
+			"type" : "file"
+		}
+	],
+	"paths" : 
+	{
+		"build" : "scripts",
+		"source" : "scripts"
+	}
+}
