@@ -95,9 +95,10 @@ public:
 	// Factory method.
 	static Statement *make_random(CGContext &cg_context,
 								  eStatementType t = MAX_STATEMENT_TYPE);
-	static eStatementType number_to_type(unsigned int value);
+    Statement *make_from_template(CGContext &cg_context, eStatementType t);
+    static eStatementType number_to_type(unsigned int value);
 
-	virtual ~Statement(void);
+    virtual ~Statement(void);
 
 	eStatementType get_type(void) const { return eType; }
 

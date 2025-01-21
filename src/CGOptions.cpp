@@ -82,6 +82,7 @@ DEFINE_GETTER_SETTER_BOOL(depth_protect)
 DEFINE_GETTER_SETTER_INT (max_split_files)
 DEFINE_GETTER_SETTER_STRING_REF(split_files_dir)
 DEFINE_GETTER_SETTER_STRING_REF(output_file)
+DEFINE_GETTER_SETTER_STRING_REF(temp_file)
 DEFINE_GETTER_SETTER_INT (max_funcs)
 DEFINE_GETTER_SETTER_INT (max_params)
 DEFINE_GETTER_SETTER_INT (max_block_size)
@@ -234,6 +235,7 @@ CGOptions::set_default_settings(void)
 	max_exhaustive_depth(CGOPTIONS_DEFAULT_MAX_EXHAUSTIVE_DEPTH);
 	max_indirect_level(CGOPTIONS_DEFAULT_MAX_INDIRECT_LEVEL);
 	output_file(CGOPTIONS_DEFAULT_OUTPUT_FILE);
+	temp_file(CGOPTIONS_DEFAULT_TEMP_FILE);
 	interested_facts(ePointTo | eUnionWrite);
 	allow_const_volatile(true);
 	avoid_signed_overflow(true);

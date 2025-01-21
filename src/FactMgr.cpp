@@ -68,6 +68,9 @@ using namespace std;
 
 std::vector<Fact*> FactMgr::meta_facts;
 
+/*
+添加变量事实和更新事实
+ */
 void
 FactMgr::add_new_var_fact_and_update_inout_maps(const Block* blk, const Variable* var)
 {
@@ -106,6 +109,9 @@ FactMgr::add_new_var_fact_and_update_inout_maps(const Block* blk, const Variable
 	}
 }
 
+/*
+
+*/
 void
 FactMgr::add_param_facts(const vector<const Expression*>& param_values, FactVec& facts)
 {

@@ -270,6 +270,7 @@ Statement::make_random(CGContext &cg_context,
 	// library call (malloc, free, str*, mem*, etc..)?
 	// switch?
 	// ..?
+	
 	if (t == MAX_STATEMENT_TYPE) {
 		StatementFilter filter(cg_context);
 		t = StatementProbability(&filter);
@@ -283,6 +284,7 @@ Statement::make_random(CGContext &cg_context,
 	if (is_compound(t)) {
 		cg_context.blk_depth++;
 	}
+
 	// XXX: interim ickiness
 	Statement *s = 0;
 

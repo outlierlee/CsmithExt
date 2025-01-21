@@ -1,25 +1,52 @@
+// {
+//     "version": "0.2.0",
+//     "configurations": [
+//       {
+//         "name": "Debug Csmith",
+//         "type": "cppdbg",
+//         "request": "launch",
+//         "program": "/usr/local/bin/csmith",  // 指向你编译后的Csmith可执行文件
+//         "args": [],
+//         "stopAtEntry": false,
+//         "cwd": "${workspaceFolder}",
+//         "environment": [],
+//         "externalConsole": true,
+//         "MIMode": "gdb",
+//         "miDebuggerPath": "/usr/bin/gdb",  // 替换为你系统上的GDB路径
+//         "setupCommands": [
+//           {
+//             "description": "Enable pretty-printing for gdb",
+//             "text": "-enable-pretty-printing",
+//             "ignoreFailures": true
+//           }
+//         ]
+//       }
+//     ]
+//   }
 {
-    "version": "0.2.0",
-    "configurations": [
-      {
-        "name": "Debug Csmith",
-        "type": "cppdbg",
-        "request": "launch",
-        "program": "/usr/local/bin/csmith",  // 指向你编译后的Csmith可执行文件
-        "args": [],
-        "stopAtEntry": false,
-        "cwd": "${workspaceFolder}",
-        "environment": [],
-        "externalConsole": true,
-        "MIMode": "gdb",
-        "miDebuggerPath": "/usr/bin/gdb",  // 替换为你系统上的GDB路径
-        "setupCommands": [
-          {
-            "description": "Enable pretty-printing for gdb",
-            "text": "-enable-pretty-printing",
-            "ignoreFailures": true
-          }
-        ]
-      }
-    ]
-  }
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug Csmith",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "/usr/local/bin/csmith", // Csmith 可执行文件路径
+      "args": [
+        "--seed", "12345", "--output", "${workspaceFolder}/random5.c","--temp-file","/home/amax/Desktop/llw/MetaMut/Core/scripts/json/InstCombineLoadStoreAllocaPass0json.json"
+      ],
+      "stopAtEntry": false,
+      "cwd": "${workspaceFolder}", // 输出目录
+      "environment": [],
+      "externalConsole": false,
+      "MIMode": "gdb",
+      "miDebuggerPath": "/usr/bin/gdb", // 替换为你系统中的 GDB 路径
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ]
+    }
+  ]
+}

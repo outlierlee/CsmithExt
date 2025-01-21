@@ -47,6 +47,7 @@
 
 #include "Statement.h"
 #include "Type.h"
+#include <nlohmann/json.hpp> 
 
 class CGContext;
 class Statement;
@@ -63,8 +64,12 @@ class Block : public Statement
 public:
 	// Factory method.
 	static Block *make_random(CGContext &cg_context, bool looping = false);
-
-	static Block *make_dummy_block(CGContext &cg_context);
+	static Block *make_random_from_template(CGContext &cg_context, bool looping = false);
+	static Block *make_random_from_template_tree(CGContext &cg_context, const nlohmann::json &structure, bool looping);
+	static void generate_statement_from_json(CGContext &cg_context, const nlohmann::json &stmt_json, Block *b);
+	static void generate_statements_from_json(CGContext &cg_context, const nlohmann::json &statements, Block *b);
+	static Statement *make_random_statement(const string& type, CGContext& cg_context);
+    static Block *make_dummy_block(CGContext &cg_context);
 
 	Block(Block* b, int block_size);
 	virtual ~Block(void);

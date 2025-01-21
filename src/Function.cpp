@@ -697,7 +697,7 @@ Function::GenerateBody(const CGContext &prev_context)
 	if (is_builtin)
 		body = Block::make_dummy_block(cg_context);
 	else
-		body = Block::make_random(cg_context);
+		body = Block::make_random_from_template(cg_context);
 	cerr << "Body generated:" << endl;
     cerr << body->to_string() << endl;  // assuming Block has to_string()
 	ERROR_RETURN();

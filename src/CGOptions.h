@@ -62,6 +62,7 @@ using namespace std;
 #define CGOPTIONS_DEFAULT_MAX_SPLIT_FILES	(0)
 #define CGOPTIONS_DEFAULT_SPLIT_FILES_DIR	("./output")
 #define CGOPTIONS_DEFAULT_OUTPUT_FILE		("")
+#define CGOPTIONS_DEFAULT_TEMP_FILE		("")
 #define PLATFORM_CONFIG_FILE                ("platform.info")
 
 /*
@@ -84,6 +85,9 @@ public:
 	static std::string output_file(void);
 	static std::string output_file(std::string p);
 
+	static std::string temp_file(void);
+	static std::string temp_file(std::string p);
+
 	static int max_funcs(void);
 	static int max_funcs(int p);
 
@@ -92,6 +96,7 @@ public:
 
 	static int max_block_size(void);
 	static int max_block_size(int p);
+	
 
 	static int max_blk_depth(void);
 	static int max_blk_depth(int p);
@@ -501,6 +506,7 @@ private:
 	static int	max_split_files_;
 	static std::string split_files_dir_;
 	static std::string output_file_;
+	static std::string temp_file_;
 	static int	max_params_;
 	static int	max_block_size_;
 	static int	max_blk_depth_;

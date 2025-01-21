@@ -100,7 +100,7 @@ ExpressionFuncall::make_random(CGContext &cg_context, const Type* type, const CV
 }
 
 /*
- *
+ * 
  */
 Expression *
 ExpressionFuncall::clone() const

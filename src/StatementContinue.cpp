@@ -69,6 +69,8 @@ StatementContinue::make_random(CGContext &cg_context)
 	if (prev_stm == 0) {
 		return 0;
 	}
+	//这里出问题的原因是找不到looping的信息了
+	std::cout << "Checking block: " << b << " with looping: " << b->looping << std::endl;
 	while (b && !b->looping) {
 		b = b->parent;
 	}
